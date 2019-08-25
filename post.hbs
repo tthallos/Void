@@ -1,0 +1,30 @@
+{{!< default}}
+
+{{#post}}
+
+{{#if feature_image}}
+  <div style="background: url({{feature_image}}) center center no-repeat; height: 400px;"></div>
+{{/if}}
+
+<section class="container">
+  <article class="post yue">
+    <header class="post-header">
+      <h1 class="post-title">{{title}}</h1>
+      <div class="post-meta">
+        <time class="updated" datatime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time>
+      </div>
+    </header>
+    <main class="post-content">
+      {{content}}
+    </main>
+    <footer class="post-footer">
+      {{#if tags}}
+        <div class="post-tags">
+          {{tags separator=" "}}
+        </div>
+      {{/if}}
+    </footer>
+  </article>
+</section>
+
+{{/post}}

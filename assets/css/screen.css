@@ -1,0 +1,288 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font: 400 18px/1.42 -apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Hiragino Sans GB,Droid Sans Fallback,Microsoft YaHei,sans-serif;
+}
+
+.container {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container:after {
+  display: table;
+  content: '';
+  clear: both;
+}
+
+#nav {
+  padding: 20px;
+  text-align: right;
+}
+
+#nav a {
+  color: #858585;
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Avenir Next",Avenir,"Helvetica Neue",sans-serif;
+}
+
+#nav a:hover,
+#nav a.active {
+  color: #333;
+}
+
+#nav a + a {
+  margin-left: 10px;
+}
+
+#footer {
+  color: #CCC;
+  padding: 10px 0;
+  font-size: 13px;
+  text-align: center;
+}
+
+#footer a {
+  color: #DDD;
+}
+
+#footer a:hover {
+  opacity: .6;
+  color: #AAA;
+}
+
+.page-heading {
+  color: #FFF;
+  text-align: center;
+  padding: 100px 0;
+}
+
+.post-list {
+  padding: 0;
+}
+
+.post-item {
+  list-style: none;
+  padding: 10px 0;
+  overflow: hidden;
+  border-bottom: 1px solid #F5F5F5;
+}
+
+.post-item h3 {
+  margin: 0;
+  font-size: 1.48em;
+}
+
+.post-item h3 a {
+  font-weight: normal;
+}
+
+.post-meta time {
+  color: #999;
+  font-size: 0.8em;
+  text-transform: uppercase;
+}
+
+.post-desc {
+  color: #CCC;
+  margin-bottom: 0;
+}
+
+.post-item .post-cover {
+  float: left;
+  margin-right: 20px;
+}
+
+.post-item .post-cover img {
+  max-width: 220px;
+}
+
+.post-list a {
+  color: #444;
+  text-decoration: none;
+  transition: opacity .2s ease-out;
+}
+
+.post-list a:hover {
+  opacity: .6;
+}
+
+.post .post-content {
+  margin-top: 2em;
+}
+
+.post-content a {
+  color: #444;
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 1px solid #999;
+}
+
+.post-content a:hover {
+  text-decoration: none;
+  opacity: .6;
+}
+
+.post-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-tags > a {
+  text-decoration: none;
+  font-size: .7em;
+  color: #777;
+}
+
+.post-tags > a + a {
+  margin-left: 10px;
+}
+
+.post-tags > a::before {
+  content: '#';
+  margin-right: 1px;
+}
+
+a {
+  transition: opacity .2s ease-out;
+}
+
+time {
+  font-family: "Avenir Next",Avenir,"Helvetica Neue",sans-serif;
+}
+
+.about-heading {
+  color: #777;
+  font-size: .78em;
+  margin-top: -50px;
+}
+
+.about-heading .blogger-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+}
+
+.about-heading .blogger-bio {
+  margin-left: 120px;
+  margin-top: -20px;
+}
+
+.about-content {
+  padding: 20px 0;
+  text-indent: 2em;
+}
+
+@media print {
+  #nav, #footer {
+    display: none;
+  }
+}
+
+@media (max-width: 1000px) {
+  .about-heading .blogger-bio {
+    margin-left: 0;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .post-cover {
+    display: none;
+  }
+}
+
+.kg-gallery-card.kg-width-wide {
+    width: 100vw;
+}
+
+.kg-gallery-card figcaption {
+    margin: -1.55em 0 1.5em
+}
+
+.kg-gallery-container {
+    display: flex;
+    flex-direction: column;
+    margin: 1.5em auto;
+    max-width: 1040px;
+    width: calc(100vw - 32px);
+}
+.kg-gallery-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.kg-gallery-image img {
+    display: block;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+.kg-gallery-row:not(:first-of-type) {
+    margin: -0.45em 0 0 0;
+}
+.kg-gallery-image:not(:first-of-type) {
+    margin: 0 0 0 0.75em;
+}
+
+figcaption {
+    text-align: center;
+    opacity: 0.68;
+    font-size: 1.65rem;
+    line-height: 1em;
+}
+
+.kg-width-wide {
+    position: relative;
+    width: 60vw;
+    min-width: 100%;
+    margin: auto calc(50% - 50vw);
+    transform: translateX(calc(50vw - 50%));
+}
+
+.kg-width-full {
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.kg-card {
+    margin-bottom: 1.75em;
+}
+
+.kg-card.kg-image-card {
+    margin-bottom: 2.5em;
+}
+
+.kg-card.kg-image-card figcaption {
+    margin-bottom: -15px;
+}
+
+.kg-card.kg-embed-card figcaption {
+    margin-top: -56px;
+    margin-bottom: -11px;
+}
+
+.fluid-width-video-wrapper {
+    margin-bottom: 66px;
+    margin-top: 51px;
+}
+
+.kg-card.kg-embed-card iframe {
+    width: 100%;
+    margin-bottom: 10px;
+}

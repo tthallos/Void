@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="{{@site.lang}}">
+
+  <head>
+    {{!-- Document Settings --}}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{!-- Base Meta --}}
+    <title>{{meta_title}}</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {{!-- Styles'n'Scripts --}}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/yue.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
+
+    {{!-- This tag outputs SEO meta+structured data and other important settings --}}
+    {{ghost_head}}
+
+  </head>
+
+  <body class="{{body_class}}">
+
+    <nav id="nav">
+      <div class="container">
+        {{#foreach @site.navigation}}
+          <a class="{{#if current}} active{{/if}}" href="{{url absolute="true"}}">{{label}}</a>
+        {{/foreach}}
+      </div>
+    </nav>
+
+    {{{body}}}
+
+    <footer id="footer">
+      <section>
+        Powered by <a href="https://ghost.org" target="_blank">Ghost</a> | Theme <a href="https://github.com/mage3k/Void" target="_blank">Void</a>
+      </section>
+    </footer>
+
+    {{{block "scripts"}}}
+
+    {{ghost_foot}}
+  </body>
+
+</html>

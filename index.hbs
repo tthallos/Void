@@ -1,0 +1,39 @@
+{{!< default}}
+
+<div style="background-image: url({{@site.cover_image}}); background-size: cover;">
+  <div class="container">
+    <div class="page-heading">
+      <h1>{{@site.title}}</h1>
+      <p>{{@site.description}}</p>
+    </div>
+  </div>
+</div>
+
+<section class="container">
+  <section class="page-content">
+    <ul class="post-list">
+      {{#foreach posts limit="10"}}
+        <li class="post-item">
+          <a href="{{url}}">
+            {{#if feature_image}}
+              <div class="post-cover">
+                <img src="{{feature_image}}">
+              </div>
+            {{/if}}
+            <div class="post-meta">
+              <time class="updated"datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time>
+            </div>
+            <div class="post-detail">
+              <h3 class="title">{{title}}</h3>
+              {{#if custom_excerpt}}
+                <div class="post-desc">{{custom_excerpt}}</div>
+              {{else}}
+                <div class="post-desc">{{excerpt characters="140"}}</div>
+              {{/if}}
+            </div>
+          </a>
+        </li>
+      {{/foreach}}
+    </ul>
+  </section>
+</secion>

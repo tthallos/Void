@@ -1,0 +1,18 @@
+{{!< default}}
+
+{{#post}}
+
+<div {{#if feature_image}}style="height: 340px; background-image: url({{feature_image}}); background-size: cover;"{{/if}}></div>
+
+<div class="container">
+  <header class="about-heading">
+    <img class="blogger-avatar" src="{{author.profile_image}}" />
+    {{#if author.bio}}
+      <div class="blogger-bio">{{author.bio}}</div>
+    {{/if}}
+  </header>
+  <article class="about-content yue">
+    {{content}}
+  </article>
+</div>
+{{/post}}

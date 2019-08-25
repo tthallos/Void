@@ -1,0 +1,19 @@
+{
+  "name": "void",
+  "version": "0.0.1",
+  "description": "Just another ghost theme",
+  "scripts": {
+    "check": "gscan ./"
+  },
+  "keywords": [
+    "ghost-theme"
+  ],
+  "author": {
+    "name": "mage3k",
+    "email": "loper.tt@gmail.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "gscan": "^2.7.0"
+  }
+}
