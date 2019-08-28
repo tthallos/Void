@@ -1,0 +1,74 @@
+{{!< default}}
+
+<div class="container" style="display: flex;">
+  <nav class="archive-list-nav">
+    <ol></ol>
+  </nav>
+  <ol class="archive-list">
+    {{#get "posts" order="published_at desc"}}
+      {{#foreach posts}}
+        <li class="archive-item" data-year="{{date format='YYYY'}}">
+          <div class="post-meta">
+            <time class="updated" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM"}}</time>
+          </div>
+          <div class="post-detail">
+            <h3 class="title"><a href="{{url}}">{{title}}</a></h3>
+          </div>
+        </li>
+      {{/foreach}}
+    {{/get}}
+  </ol>
+</div>
+<script type="text/javascript">
+  (function() {
+    const { reduce, filter, forEach } = Array.prototype
+    const archive_dom_list = document.querySelectorAll('.archive-item')
+
+    const post_list_by_year = reduce.call(archive_dom_list, (cache, curr) => {
+      const year = curr.dataset.year
+      if (cache[year]) {
+        cache[year].push(curr)
+      } else {
+        cache[year] = [curr]
+      }
+      return cache
+    }, {})
+
+    const years = Object.keys(post_list_by_year).sort((a, b) => +b - +a)
+
+    const fragment = document.createDocumentFragment()
+    years.forEach(year => {
+      const li = document.createElement('li')
+      li.textContent = year
+      li.addEventListener('click', e => {
+        e.target.classList.add('current')
+
+        let prev_el = e.target.previousElementSibling
+        while(prev_el) {
+          prev_el.classList.remove('current')
+          prev_el = prev_el.previousElementSibling
+        }
+
+        let next_el = e.target.nextElementSibling
+        while(next_el) {
+          next_el.classList.remove('current')
+          next_el = next_el.nextElementSibling
+        }
+
+        const year = e.target.textContent
+        filter.call(archive_dom_list, el => {
+          el.classList.remove('show')
+          return el.dataset.year === year
+        }).forEach(el => el.classList.add('show'))
+      })
+      fragment.appendChild(li)
+    })
+
+    const nav = document.querySelector('nav > ol')
+    nav.appendChild(fragment)
+
+    const first_el = document.querySelector('nav > ol > li:first-child')
+    const event = new Event('click')
+    first_el.dispatchEvent(event)
+  })()
+</script>

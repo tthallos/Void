@@ -5,6 +5,9 @@
   "scripts": {
     "check": "gscan ./"
   },
+  "engines": {
+    "ghost-api": "v2"
+  },
   "keywords": [
     "ghost-theme"
   ],
