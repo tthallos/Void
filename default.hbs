@@ -22,13 +22,7 @@
 
   <body class="{{body_class}}">
 
-    <nav id="nav">
-      <div class="container">
-        {{#foreach @site.navigation}}
-          <a class="{{#if current}} active{{/if}}" href="{{url absolute="true"}}">{{label}}</a>
-        {{/foreach}}
-      </div>
-    </nav>
+    {{navigation}}
 
     {{{body}}}
 
